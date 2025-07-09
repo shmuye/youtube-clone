@@ -1,40 +1,47 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { Paper, IconButton } from "@mui/material"
-import { Search } from "@mui/icons-material"
+import { Stack } from "@mui/material"
+import { categories } from "../assets/constants"
 
+const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
 
-const SearchBar = () => (
-    <Paper
-        component="form"
-
-        sx={{
-            borderRadius: 10,
-            border: '1px solid #e3e3e3',
-            pl: 5,
-            mr: { sm: 5 },
-
-
-        }}
-    >
-        <input
-            className="search"
-            type="search"
-            placeholder="Search..."
-            value=""
-            onChange={() => { }}
-
-        />
-        <IconButton
-            type="submit"
+    return (
+        <Stack
+            direction='row'
             sx={{
-                p: '10px',
+                overflowY: 'auto',
+                height: { sx: 'auto', md: '95%' },
+                flexDirection: { md: "column" },
 
             }}
         >
-            <Search />
-        </IconButton>
-    </Paper>
-)
+            {
 
-export default SearchBar
+                categories.map((category) => (
+
+                    < button
+                        onClick={() => {
+                            setSelectedCategory(category.name)
+                        }}
+                        key={category.name}
+                        style={{
+                            backgroundColor: category.name === selectedCategory && '#444',
+                            color: 'white',
+                        }}
+                        className="category-btn"
+                    >
+                        <span
+                            style={{
+                                color: 'white',
+                                marginRight: '15px'
+                            }}
+                        ><category.icon /></span>
+                        <span style={{
+                            opacity: category.name === selectedCategory ? '1' : '0.8'
+                        }}>{category.name}</span>
+                    </button>
+                ))
+            }
+        </Stack >
+    )
+}
+
+export default Sidebar
