@@ -1,10 +1,5 @@
 import { Stack } from '@mui/material';
-import { Link } from 'react-router-dom';
 import { logo } from '../assets/constants';
-
-
-
-
 import SearchBar from './SearchBar';
 const Navbar = () =>
 (
@@ -20,13 +15,6 @@ const Navbar = () =>
 
         <img src={logo} height={50} alt="logo" />
         <SearchBar />
-
-
-
-
-
-
-
     </Stack>
 )
 
