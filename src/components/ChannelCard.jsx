@@ -27,7 +27,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => {
                         color: '#fff'
                     }}>
                     <CardMedia
-                        image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
+                        image={channelDetail?.snippet?.thumbnails?.high?.url}
                         src={channelDetail?.snippet?.title}
                         sx={{
                             borderRadius: '50%',

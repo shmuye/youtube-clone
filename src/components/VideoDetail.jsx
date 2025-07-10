@@ -11,8 +11,10 @@ const VideoDetail = () => {
     const [videoDetail, setVideoDetail] = useState(null);
     const [videos, setVideos] = useState(null);
     const { id } = useParams();
+    console.log(id)
 
     useEffect(() => {
+
         fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
             .then((data) => setVideoDetail(data.items[0]))
 
@@ -20,8 +22,8 @@ const VideoDetail = () => {
             .then((data) => setVideos(data.items))
     }, [id]);
 
-    if (!videoDetail?.snippet) return <Loader />;
-
+    if (!videoDetail?.snippet) return "Loading...";
+    console.log(videoDetail)
     const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
 
     return (
