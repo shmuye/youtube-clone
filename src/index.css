@@ -32,21 +32,6 @@ a {
     background-color: transparent;
 }
 
-.category-btn:hover {
-    background-color: #444 !important;
-    color: white !important;
-}
-
-.category-btn:hover span {
-    color: white !important;
-}
-
-.react-player {
-    height: 77vh !important;
-    width: 100% !important;
-}
-
-
 .category-btn {
     font-weight: bold !important;
     text-transform: capitalize;
@@ -62,6 +47,20 @@ a {
     margin: 10px 0px;
     border-radius: 20px;
     transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    background-color: #444 !important;
+    color: white !important;
+}
+
+.category-btn:hover span {
+    color: white !important;
+}
+
+.react-player {
+    height: 77vh !important;
+    width: 100% !important;
 }
 
 @media screen and (max-width: 900px) {

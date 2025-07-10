@@ -3,13 +3,18 @@ import { logo } from '../assets/constants';
 import SearchBar from './SearchBar';
 const Navbar = () =>
 (
-    <Stack direction="row" alignItems='center' p={2} sx={{
-        position: 'sticky',
-        justifyContent: 'space-between',
-        top: 0,
-        backgroundColor: '#000',
+    <Stack
+        direction="row"
+        alignItems='center'
+        p={2}
+        sx={{
+            position: 'sticky',
+            justifyContent: 'space-between',
+            top: 0,
+            backgroundColor: '#000',
+            zIndex: '1000'
 
-    }}>
+        }}>
 
 
         <Stack

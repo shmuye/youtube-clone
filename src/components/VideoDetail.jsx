@@ -11,7 +11,7 @@ const VideoDetail = () => {
     const [videoDetail, setVideoDetail] = useState(null);
     const [videos, setVideos] = useState(null);
     const { id } = useParams();
-    console.log(id)
+
 
     useEffect(() => {
 
@@ -23,7 +23,7 @@ const VideoDetail = () => {
     }, [id]);
 
     if (!videoDetail?.snippet) return "Loading...";
-    console.log(videoDetail)
+
     const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
 
     return (
@@ -31,7 +31,10 @@ const VideoDetail = () => {
             <Stack direction={{ xs: "column", md: "row" }}>
                 <Box flex={1}>
                     <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
-                        <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className="react-player" controls />
+                        <ReactPlayer
+                            src={`https://www.youtube.com/watch?v=${id}`}
+                            className="react-player"
+                            controls />
                         <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
                             {title}
                         </Typography>
