@@ -1,7 +1,18 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Creates a separate chunk for React libraries
+          react: ['react', 'react-dom'],
+          // Add more if you use other big libraries
+          // e.g. lodash: ['lodash'],
+        },
+      },
+    },
+  },
 })
