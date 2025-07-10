@@ -1,4 +1,4 @@
-import { Stack } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import { logo } from '../assets/constants';
 import SearchBar from './SearchBar';
 const Navbar = () =>
@@ -12,8 +12,18 @@ const Navbar = () =>
     }}>
 
 
+        <Stack
+            direction='row'
+            alignItems='center'
+            gap='10px'>
+            <img src={logo} height={50} alt="logo" />
+            <Typography
+                variant='h6'
+                color='#fff'
+                fontWeight='bold'
+            >Youtube</Typography>
+        </Stack>
 
-        <img src={logo} height={50} alt="logo" />
         <SearchBar />
     </Stack>
 )
