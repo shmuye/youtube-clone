@@ -23,16 +23,7 @@ const Feed = () => {
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}
                 />
-                <Typography
-                    sx={{
-                        mt: 1.5,
-                        color: '#fff'
-                    }}
-                >
-                    Copyright Shumuye Ayalneh {
-                        new Date().getFullYear()
-                    }
-                </Typography>
+
             </Box>
             <Box
                 sx={{
